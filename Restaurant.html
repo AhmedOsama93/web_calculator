@@ -1,0 +1,118 @@
+
+<!--Ahmed Osama Mahmoud Mohamed
+    ID:20190015
+    Group:S8
+ -->
+<!DOCTYPE html>
+<html>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function loadDoc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").style = "font-size: 200% ;weight: bold;font-family: 'Arail';color: blue;text-align: center";
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax-info.txt", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+
+<div class="banner-area">
+    <div class="bg">
+    <div class="content-area">
+        <div class="left">
+            <h3 style="font-size:100% ;font-family:'Brush Script MT', cursive;">Blog    Menu    Gallery   Contacts   About   Home</h3>
+        </div>
+        <div class="container">
+            <div class="center">
+                <h1 class="ty" >French Restaurant</h1>
+                <h2 class="ty">We’re the best restaurant in town</h2>
+                <div class="container1">
+                    <div class="center1">
+                            <button onclick="loadDoc()" class="bt" >Learn more </button>
+                            <a href="RestaurantForm.html" ><button class="bt">Booking</button></a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        <div id="demo">
+
+        </div>
+        </div>
+
+</div>
+
+<style>
+    .bt{
+        font-size:125%;
+        background-color: #939393;
+
+        font-family: 'Brush Script MT', cursive;"
+    }
+    .container {
+        height: 600px;
+        position: relative;
+        color : #282323;
+
+    }
+    .ty{
+        font-size:300%;
+        font-family:'Brush Script MT', cursive;
+    }
+    .center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-60%, -60%);
+        transform: translate(-50%, -70%);
+    }
+    .container1 {
+        height: 0;
+        position: relative;
+        background-color: black;
+    }
+
+    .center1 {
+        margin: 0;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        -ms-transform: translate(-50%, -40%);
+        transform: translate(-50%, -50%);
+    }
+    left {
+        background-color: rgb(19 13 40%);
+        height: 50px;
+        top: 50%;
+        left: 300px;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+    h1 {text-align: center;}
+    h2 {text-align: center;}
+    h3 {text-align: left;}
+    .bg {
+        background-image: url("ahmed.jpg");
+        position: relative;
+        height: 1000px ;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border: none;
+    }
+
+</style>
+
+</body>
+</html>

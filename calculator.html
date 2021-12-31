@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+</head>
+<script src = "calculator.js" ></script>
+<style >
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background-image: url("back.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: .9;
+  }
+
+  .main{
+    text-align: center;
+    width: 400px;
+    height: 600px;
+    margin: 80px auto;
+  }
+  form{
+    padding: 0 5px;
+    margin-bottom: 15px;
+  }
+  .textview{
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    pointer-events: none;
+  }
+  .clearfix:before,.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+    width: 100%;
+
+  }
+  .col-3{
+    width: 25%;
+    padding: 7px;
+    float: left;
+  }
+  .col-6{
+    width: 100%;
+    padding: 7px;
+    float: left;
+  }
+  .button{
+    width: 100%;
+    height: 40px;
+    color: #0A1931;
+    font-weight: bold;
+    font-family: "Arial Black";
+    font-size: 22px;
+    background: #9BA4B4;
+  }
+  .c-button{
+    color: #0A1931;
+    background: #F1F6F9;
+
+  }
+  .button.operator{
+
+    color: #0A1931;
+    background: #F1F6F9;
+    font-size: 20px;
+  }
+</style>
+<body>
+<div class = "main">
+  <from name="form">
+    <input type="text" id="txt" value="" class="textview">
+  </from>
+  <div class="clearfix">
+    <div class="col-3"><input type="button" value="1" class="button up-button"onclick="inter(1)"></div>
+    <div class="col-3"><input type="button" value="2" class="button up-button"onclick="inter(2)"></div>
+    <div class="col-3"><input type="button" value="3" class="button up-button"onclick="inter(3)"></div>
+    <div class="col-3"><input type="button" value="&#43;" class="button up-button operator"onclick="inter('+');"></div>
+  </div>
+  <div class="clearfix">
+    <div class="col-3"><input type="button" value="4" class="button"onclick="inter(4)"></div>
+    <div class="col-3"><input type="button" value="5" class="button"onclick="inter(5)"></div>
+    <div class="col-3"><input type="button" value="6" class="button"onclick="inter(6)"></div>
+    <div class="col-3"><input type="button" value="&#8722;" class="button up-button operator"onclick="inter('-');"></div>
+  </div>
+  <div class="clearfix">
+    <div class="col-3"><input type="button" value="7" class="button " onclick="inter(7)"></div>
+    <div class="col-3"><input type="button" value="8" class="button " onclick="inter(8)"></div>
+    <div class="col-3"><input type="button" value="9" class="button " onclick="inter(9)"></div>
+    <div class="col-3"><input type="button" value="&#215;" class="button up-button operator" onclick="inter('*')"></div>
+  </div>
+  <div class="clearfix">
+    <div class="col-3"><input type="button" value="&#247;" class="button " onclick="inter('/')"></div>
+    <div class="col-3"><input type="button" value="0" class="button" onclick="inter(0)"></div>
+    <div class="col-3"><input type="button" value="." class="button" onclick="inter('.')"></div>
+    <div class="col-3"><input type="button" value="&#61;" class="button up-button " onclick="Eq()"></div>
+  </div>
+  <div class="clearfix">
+    <div class="col-6"><input type="button" value="Clear All" class="button c-button "onclick=clearAll();></div>
+  </div>
+</div>
+<script>
+  function inter(number){
+    var str = document.getElementById("txt").value;
+    var lC = str[str.length - 1];
+    document.getElementById("txt").value= str+number;
+
+  }
+  function Eq(){
+    var res = document.getElementById("txt").value;
+    document.getElementById("txt").value = eval(res);
+  }
+  function clearAll(){
+    document.getElementById("txt").value='';
+  }
+
+</script>
+</body>
+</html>
+
